@@ -1,0 +1,43 @@
+﻿@model PiattoViewModel
+
+<h1>Inserisci un nuovo piatto</h1>
+
+<form method="post">
+    <div class="mb-3">
+        <label asp-for="PiattoId" class="form-label"></label>
+        <input type="text" class="form-control" asp-for="PiattoId" placeholder="Inserisci codice">
+        <span asp-validation-for="PiattoId" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Nome" class="form-label"></label>
+        <input type="text" class="form-control" asp-for="Nome" placeholder="Inserisci il nome">
+        <span asp-validation-for="Nome" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Descrizione" class="form-label"></label>
+        <input type="text" class="form-control" asp-for="Descrizione" placeholder="Inserisci la descrizione">
+        <span asp-validation-for="Descrizione" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Tipologia" class="form-label"></label>
+        <select asp-for="Tipologia" asp-items="@ViewBag.Tipologia" class="form-control">
+            <option value="">Selezionare un'opzione...</option>
+        </select>
+        <span asp-validation-for="Tipologia" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Prezzo" class="form-label"></label>
+        <input type="number" class="form-control" asp-for="Prezzo" placeholder="Inserisci il prezzo">
+        <span asp-validation-for="Prezzo" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="MenuPiattiId" class="form-label"></label>
+        <input type="number" class="form-control" asp-for="MenuPiattiId" placeholder="Inserisci l'id del menù di appartenenza">
+        <span asp-validation-for="MenuPiattiId" class="text-danger"></span>
+    </div>
+
+
+    <input type="submit" value="Inserisci" class="btn btn-primary" />
+    <input type="reset" value="Reset" class="btn btn-danger" />
+    <a class="btn btn-primary" asp-action="Index" role="button">Back</a>
+</form>

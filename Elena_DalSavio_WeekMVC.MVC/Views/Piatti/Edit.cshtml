@@ -1,0 +1,30 @@
+﻿@model PiattoViewModel
+<h1>Modifica Docente</h1>
+
+<form method="post">
+    <div class="form-group">
+        <label asp-for="PiattoId"></label>
+        <input asp-for="PiattoId" class="form-control" readonly />
+        <span asp-validation-for="PiattoId" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Nome"></label>
+        <input asp-for="Nome" class="form-control" readonly />
+        <span asp-validation-for="Nome" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Descrizione" class="form-label"></label>
+        <input type="text" class="form-control" readonly asp-for="Descrizione" placeholder="Inserisci Cognome">
+        <span asp-validation-for="Descrizione" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Prezzo" class="form-label"></label>
+        <input type="text" class="form-control" asp-for="Prezzo" placeholder="Inserisci DataNascita">
+        <span asp-validation-for="Prezzo" class="text-danger"></span>
+    </div>
+    
+
+    <input type="submit" value="Inserisci" class="btn btn-primary" />
+    <input type="reset" value="Reset" class="btn btn-danger" />
+    <a class="btn btn-primary" asp-action="Index" role="button">Back</a>
+</form>

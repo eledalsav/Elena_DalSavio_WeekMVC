@@ -1,0 +1,20 @@
+﻿@model MenuViewModel
+<h1>Modifica Menu</h1>
+
+<form method="post">
+    <div class="mb-3">
+        <label asp-for="MenuPiattiId"></label>
+        <input asp-for="MenuPiattiId" class="form-control" readonly />
+        <span asp-validation-for="MenuPiattiId" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Nome" class="form-label"></label>
+        <input type="text" class="form-control" asp-for="Nome" placeholder="Modifica nome corso">
+        <span asp-validation-for="Nome" class="text-danger"></span>
+    </div>
+
+
+    <input type="submit" value="Inserisci" class="btn btn-primary" />
+    <input type="reset" value="Reset" class="btn btn-danger" />
+    <a class="btn btn-primary" asp-action="Index" role="button">Back</a>
+</form>

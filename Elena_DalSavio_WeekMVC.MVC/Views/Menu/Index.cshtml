@@ -1,0 +1,48 @@
+﻿@model List<MenuViewModel>
+
+<h1>Ecco la lista dei menù disponibili</h1>
+@*@if (User.IsInRole("Administrator"))
+    {
+        <a class="btn btn-primary" asp-controller="Prodotto" asp-action="Create" type="button">Inserisci nuovo prodotto</a>
+    }*@
+<a class="btn btn-primary" asp-controller="Menu" asp-action="Create" type="button">Inserisci un nuovo Menù</a>
+<br />
+<br />
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">Codice Menù</th>
+            <th scope="col">Nome</th>
+            <th scope="col"></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Nome</td>
+                <td>
+                    <a asp-controller="Menu" asp-action="Details" asp-route-id="@item.MenuPiattiId" class="btn btn-primary">Visualizza Dettagli</a>
+                    @*@if (User.IsInRole("Administrator"))
+        {
+            <a asp-controller="Prodotto" asp-action="Edit" asp-route-id="@item.Codice" class="btn btn-primary">Modifica Prodotto</a>
+            <a asp-controller="Prodotto" asp-action="Delete" asp-route-id="@item.Codice" class="btn btn-primary">Elimina Prodotto</a>
+        }*@
+                    <a asp-controller="Menu" asp-action="Edit" asp-route-id="@item.MenuPiattiId" class="btn btn-primary">Modifica Menu</a>
+                    <a asp-controller="Menu" asp-action="Delete" asp-route-id="@item.MenuPiattiId" class="btn btn-primary">Elimina Menu</a>
+                   
+
+                </td>
+            </tr>
+        }
+    </tbody>
+    <tfoot>
+        <tr>
+            <th>Totale</th>
+            <th>@Model.Count</th>
+            <th></th>
+        </tr>
+    </tfoot>
+</table>
+
+

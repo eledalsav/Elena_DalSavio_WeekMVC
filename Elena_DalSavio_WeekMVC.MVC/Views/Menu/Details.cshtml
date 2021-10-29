@@ -1,0 +1,27 @@
+﻿@model MenuViewModel
+
+<h1>Ecco i dettagli del menu @Model.MenuPiattiId @Model.Nome : </h1>
+
+<p>Di seguito l'elenco dei piatti di questo menù</p>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">Nome</th>
+            <th scope="col">Descrizione</th>
+            <th scope="col">Tipologia</th>
+            <th scope="col">Prezzo</th>
+            <th scope="col"></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.piatti)
+        {
+            <tr>
+                <th>
+                    <a asp-controller="Piatti" asp-action="Details" asp-route-id="@item.PiattoId" class="btn btn-primary">Visualizza Dettagli</a>
+                </th>
+            </tr>
+        }
+    </tbody>
+</table>
